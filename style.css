@@ -1,0 +1,129 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fontes estilo Linux Libertine / Wikipédia */
+body {
+  font-family: "Linux Libertine", "Georgia", serif;
+  background: #ffffff;
+  color: #212121;
+  line-height: 1.6;
+}
+
+/* Cores duronas URSS */
+:root {
+  --vermelho: #8B0000;
+  --amarelo: #FFD700;
+  --preto: #212121;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hero .flag {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+  z-index: 1;
+}
+
+.hero-title {
+  position: relative;
+  z-index: 2;
+  color: var(--amarelo);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 0 var(--preto);
+}
+
+/* Menu estilo Wikipedia */
+.menu {
+  background: var(--vermelho);
+}
+
+.menu ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 1rem 0;
+}
+
+.menu li {
+  margin: 0 2rem;
+}
+
+.menu a {
+  color: var(--amarelo);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  transition: transform 0.2s ease;
+}
+
+.menu a:hover {
+  transform: scale(1.05);
+}
+
+/* Conteúdo principal estilo enciclopédia */
+.main-content {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.main-content article {
+  margin-bottom: 2.5rem;
+}
+
+.main-content h2 {
+  font-size: 2rem;
+  border-bottom: 3px solid var(--vermelho);
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.8rem;
+  color: var(--vermelho);
+}
+
+.main-content p {
+  font-size: 1.1rem;
+  text-align: justify;
+}
+
+/* Footer */
+.footer {
+  background: var(--vermelho);
+  color: var(--amarelo);
+  text-align: center;
+  padding: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Responsividade */
+@media(max-width: 768px) {
+  .menu ul {
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 0.8rem 0;
+  }
+  
+  .hero-title {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+  }
+}
